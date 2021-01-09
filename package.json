@@ -1,0 +1,33 @@
+{
+    "name": "nodejs_api",
+    "version": "1.0.0",
+    "description": "Node.js API Masterclass With Express & MongoDB",
+    "main": "server.js",
+    "scripts": {
+        "start": "NODE_ENV=production node server",
+        "dev": "nodemon server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mykola-bartkiv/nodejs-api.git"
+    },
+    "keywords": [
+        "NodeJS",
+        "JS",
+        "MongoDB",
+        "Express"
+    ],
+    "author": "Mykola Bartkiv",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mykola-bartkiv/nodejs-api/issues"
+    },
+    "homepage": "https://github.com/mykola-bartkiv/nodejs-api#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
