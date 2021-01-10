@@ -2,45 +2,19 @@ const e = require('express');
 const express = require('express');
 const dotenv = require('dotenv');
 
+//Route files
+const bootcamp = require('./routes/bootcamps');
+
 //Load env vars
 dotenv.config({ path: './config/config.env' });
 
 const app = express();
+const router = express.Router();
 
-app.get('/api/v1/bootcamps', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: 'Show all bootcamps',
-    });
-});
-
-app.get('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `Get bootcamp ${req.params.id}`,
-    });
-});
-
-app.put('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `Update bootcamp ${req.params.id}`,
-    });
-});
-
-app.post('/api/v1/bootcamps', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `Create new bootcamp`,
-    });
-});
-
-app.delete('/api/v1/bootcamps/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        msg: `Delete bootcamp ${req.params.id}`,
-    });
-});
+//Mount routes
+//app.use(`${apiVersion}/bootcamps`, bootcamp);
+router.use('/bootcamps', bootcamp);
+app.use('/api/v1', router);
 
 const PORT = process.env.PORT || 5000;
 
