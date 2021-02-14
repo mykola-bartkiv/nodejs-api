@@ -6,7 +6,10 @@ const ErrorResponse = require('../utils/errorResponse');
 // @route   GET /api/v1/bootcamps
 // @access  Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-    const bootcamps = await Bootcamp.find();
+    const bootcamps = await Bootcamp.find(req.query);
+
+    console.log(req.query);
+
     res.status(200).json({
         success: true,
         msg: `Show all bootcamps`,
